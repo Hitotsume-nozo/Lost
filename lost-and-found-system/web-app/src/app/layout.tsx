@@ -1,23 +1,24 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { Providers } from '@/components/Providers';
+import { Providers } from '@/components/shared/providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Centralized Campus Lost & Found',
-  description: 'A pure SQL backend implementation with PL/SQL automation for Thapar Institute',
-  authors: [{ name: 'Sahil Soumen' }, { name: 'Arnav Jain' }, { name: 'Sharan Sharma' }],
+  title: 'Campus Lost & Found',
+  description: 'Centralized Campus Lost and Found System - Report and claim lost items',
+  authors: [{ name: 'Hitotsume-Nozo' }],
+  keywords: ['lost and found', 'campus', 'database', 'TIET'],
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
